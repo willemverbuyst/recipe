@@ -1,3 +1,4 @@
+import { EventEmitter } from '@angular/core';
 import { Recipe } from './recipe.model';
 
 export class RecipeService {
@@ -13,6 +14,7 @@ export class RecipeService {
       'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg'
     ),
   ];
+  public recipeSelected = new EventEmitter<Recipe>();
 
   getRecipes() {
     return this.recipes.slice();
